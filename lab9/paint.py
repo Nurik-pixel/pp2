@@ -24,16 +24,16 @@ COLOR_PALETTE = {
 
 # Starting settings
 clock = pygame.time.Clock()
-screen.fill(WHITE)  # start with a white canvas
+screen.fill(WHITE)
 drawing = False
-tool = "line"       # default tool
-color = BLACK       # default color
-start_pos = (0, 0)  # start of shape
+tool = "line"      
+color = BLACK      
+start_pos = (0, 0)
 current_pos = (0, 0)
 ERASER_SIZE = 20
-background = screen.copy()  # saves what's drawn so far
+background = screen.copy()  # saves whats drawn
 
-# Set up the font for tool instructions
+# Set font
 font = pygame.font.SysFont("arial", 26)
 
 # Function to draw tool help text in the corner
@@ -58,7 +58,7 @@ def draw_shape(tool, start, end, color):
     if tool == "rect":
         #rectangle
         rect = pygame.Rect(min(start[0], end[0]), min(start[1], end[1]),
-                           abs(end[0] - start[0]), abs(end[1] - start[1]))
+                            abs(end[0] - start[0]), abs(end[1] - start[1]))
         pygame.draw.rect(screen, color, rect, 2)
 
     elif tool == "circle":
